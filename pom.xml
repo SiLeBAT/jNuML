@@ -8,6 +8,13 @@
     <artifactId>jnuml</artifactId>
     <version>0.0.1</version>
 
+    <distributionManagement>
+        <repository>
+            <id>bintray</id>
+            <url>https://api.bintray.com/maven/silebat/bfr-formats/jnuml/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <!-- Sets Java language to 8 -->
