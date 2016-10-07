@@ -28,6 +28,16 @@ public enum DataType {
         this.name = name;
     }
 
+    /**
+     * Returns:
+     * <ul>
+     *     <li><code>null</code>for <code>null</code> or empty strings</li>
+     *     <li><code>String</code> for non empty strings that do not contain numbers</li>
+     *     <li><code>float</code> for strings with a float</li>
+     *     <li><code>double</code> for strings with a double</li>
+     *     <li><code>int</code> for strings with an integer</li>
+     * </ul>
+     */
     public Object parse(String value) {
         if (value == null || value.isEmpty()) {
             return null;
@@ -59,6 +69,15 @@ public enum DataType {
         return null;
     }
 
+    /**
+     * Returns:
+     * <ul>
+     *     <li>"string" for {@link DataType#STRING}</li>
+     *     <li>"float" for {@link DataType#FLOAT}</li>
+     *     <li>"double" for {@link DataType#DOUBLE}</li>
+     *     <li>"int" for {@link DataType#INTEGER}</li>
+     * </ul>
+     */
     @Override
     public String toString() {
         return name;
