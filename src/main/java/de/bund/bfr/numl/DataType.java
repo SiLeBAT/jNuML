@@ -20,57 +20,57 @@
 package de.bund.bfr.numl;
 
 public enum DataType {
-	STRING("string"), FLOAT("float"), DOUBLE("double"), INTEGER("integer");
+    STRING("string"), FLOAT("float"), DOUBLE("double"), INTEGER("integer");
 
-	private String name;
+    private String name;
 
-	private DataType(String name) {
-		this.name = name;
-	}
+    private DataType(String name) {
+        this.name = name;
+    }
 
-	public Object parse(String value) {
-		if (value == null || value.isEmpty()) {
-			return null;
-		}
+    public Object parse(String value) {
+        if (value == null || value.isEmpty()) {
+            return null;
+        }
 
-		switch (this) {
-		case STRING:
-			return value;
-		case FLOAT:
-			try {
-				return Float.parseFloat(value);
-			} catch (NumberFormatException e) {
-				return null;
-			}
-		case DOUBLE:
-			try {
-				return Double.parseDouble(value);
-			} catch (NumberFormatException e) {
-				return null;
-			}
-		case INTEGER:
-			try {
-				return Integer.parseInt(value);
-			} catch (NumberFormatException e) {
-				return null;
-			}
-		}
+        switch (this) {
+            case STRING:
+                return value;
+            case FLOAT:
+                try {
+                    return Float.parseFloat(value);
+                } catch (NumberFormatException e) {
+                    return null;
+                }
+            case DOUBLE:
+                try {
+                    return Double.parseDouble(value);
+                } catch (NumberFormatException e) {
+                    return null;
+                }
+            case INTEGER:
+                try {
+                    return Integer.parseInt(value);
+                } catch (NumberFormatException e) {
+                    return null;
+                }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	@Override
-	public String toString() {
-		return name;
-	}
+    @Override
+    public String toString() {
+        return name;
+    }
 
-	public static DataType fromName(String name) {
-		for (DataType type : values()) {
-			if (type.toString().equals(name)) {
-				return type;
-			}
-		}
+    public static DataType fromName(String name) {
+        for (DataType type : values()) {
+            if (type.toString().equals(name)) {
+                return type;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 }
