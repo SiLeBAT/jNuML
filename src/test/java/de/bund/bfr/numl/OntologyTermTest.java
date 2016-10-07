@@ -1,20 +1,15 @@
 package de.bund.bfr.numl;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import javax.crypto.ExemptionMechanismException;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-/**
- * Created by de on 07.10.2016.
- */
 public class OntologyTermTest {
 
     private static Document doc;
@@ -34,7 +29,7 @@ public class OntologyTermTest {
     }
 
     @Test
-    public void testConstructorWithElement() throws Exception {
+    public void testConstructorWithElement() {
         Element node = doc.createElement("ontologyTerm");
         node.setAttribute("id", "time");
         node.setAttribute("term", "time");
